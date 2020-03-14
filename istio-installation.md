@@ -6,10 +6,34 @@
     export PATH=$PWD/bin:$PATH
 
 
-## set Istio Profile
-    
-     istioctl profile dump >default-profile.txt
+## Checkout available Istio Profile and their differences
+   
+     istioctl profile list
+   
+     istioctl profile dump demo >demo.txt
+     istioctl profile dump default >default.txt
+     vim -d demo.txt default.txt
+
+## Install istio with demo profile (If you go with the default profile make sure your server has enough CPU/Mem resources)
+     
      istioctl manifest apply --set profile=demo
-     istioctl profile dump >demo-profile.txt
-     vim -d default-profile.txt demo-profile.txt
+     
+## Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
+
+    kubectl label namespace default istio-injection=enabled
+
+# Deploy the sample application 
+
+    kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+    kubectl get services
+    kubectl get deploy
+    
+## Wait for 5 minutes and then Make sure it is working fine 
+
+    kubectl get po
+    kubectl get ep    
+    kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
+    
+This should give you an output containing "<title>Simple Bookstore App</title>"
+
 
