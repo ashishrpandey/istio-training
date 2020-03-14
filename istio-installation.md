@@ -36,4 +36,19 @@
     
 This should give you an output containing "<title>Simple Bookstore App</title>"
 
+      kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+      kubectl get gateway
+      kubectl get svc istio-ingressgateway -n istio-system
+      kubectl edit svc istio-ingressgateway -n istio-system
+     
+- Change the service type from <LoadBalancer> to <NodePort>
+- Then Find the nodeport corresponding to http2 
+     
+      kubectl get svc istio-ingressgateway -n istio-system
+      kubectl get ep istio-ingressgateway -n istio-system
+      kubectl describe svc istio-ingressgateway -n istio-system |grep -i http2 
+      
+
+      
+
 
