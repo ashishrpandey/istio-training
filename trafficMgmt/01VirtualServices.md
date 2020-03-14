@@ -4,7 +4,7 @@
 * DestinationRule defines subsets. 
 * Subset creation is done using Labels 
 
-    cd samples/bookinfo/networking
+      cd samples/bookinfo/networking
     
 Look how to define Destination rules and subsets:
 
@@ -28,21 +28,21 @@ Create the virtual services
     
 Checkout the DestinationRules and virtual services thus created: 
 
-[root@ip-172-31-19-150 networking]# kubectl get dr
-NAME          HOST          AGE
-details       details       19m
-productpage   productpage   19m
-ratings       ratings       19m
-reviews       reviews       19m
+    [root@ip-172-31-19-150 networking]# kubectl get dr
+    NAME          HOST          AGE
+    details       details       19m
+    productpage   productpage   19m
+    ratings       ratings       19m
+    reviews       reviews       19m
 
 
-[root@ip-172-31-19-150 networking]# kubectl get vs
-NAME          GATEWAYS             HOSTS           AGE
-bookinfo      [bookinfo-gateway]   [*]             149m
-details                            [details]       6m37s
-productpage                        [productpage]   6m37s
-ratings                            [ratings]       6m37s
-reviews                            [reviews]       18m
+    [root@ip-172-31-19-150 networking]# kubectl get vs
+    NAME          GATEWAYS             HOSTS           AGE
+    bookinfo      [bookinfo-gateway]   [*]             149m
+    details                            [details]       6m37s
+    productpage                        [productpage]   6m37s
+    ratings                            [ratings]       6m37s
+    reviews                            [reviews]       18m
 
 
 
