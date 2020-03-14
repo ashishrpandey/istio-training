@@ -45,6 +45,10 @@ Checkout the DestinationRules and virtual services thus created:
     reviews                            [reviews]       18m
 
 
+- Check the productpage 
+- refresh it multiple times 
+- it will always show review - version 1 (Without stars)
+
 
 
 
