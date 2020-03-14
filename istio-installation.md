@@ -46,9 +46,16 @@ This should give you an output containing "<title>Simple Bookstore App</title>"
      
       kubectl get svc istio-ingressgateway -n istio-system
       kubectl get ep istio-ingressgateway -n istio-system
-      kubectl describe svc istio-ingressgateway -n istio-system |grep -i http2 
+      kubectl describe svc istio-ingressgateway -n istio-system |grep -i http2 |grep -i nodeport
       
+The command above will show the value of the nodeport assigned  
 
-      
+ - Open the web browser and type: 
+ 
+ - http://<public-ip>:<nodeport-value>/productpage 
+    
+ - You shall see a book-info website 
+ 
+    
 
 
