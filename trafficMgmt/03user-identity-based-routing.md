@@ -17,8 +17,8 @@
   - In the browser open the productpage: 
   - http://<public-ip>:<nodeport>/productpage/
   
-  - Login as Jason user
-         -  you shall see the page with version v2 (black star)
+   - Login as Jason user
+        -  you shall see the page with version v2 (black star)
         
    - Login as any other user
         - you shall see the page with version v1 (No star)
