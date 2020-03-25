@@ -14,7 +14,7 @@
      istioctl profile dump default >default.txt
      vim -d demo.txt default.txt
 
-## Install istio with demo profile (If you go with the default profile make sure your server has enough CPU/Mem resources)
+## Install istio with demo profile (Make sure your server has enough CPU/Mem resources , demo profile makes sure that it installs grafana, prometheus Kiali and other services)
      
      istioctl manifest apply --set profile=demo
      
