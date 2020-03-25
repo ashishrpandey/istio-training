@@ -52,7 +52,7 @@ The command above will show the value of the nodeport assigned
 
  - Open the web browser and type: 
  
- - http://<public-ip>:<nodeport-value>/productpage 
+ - http://public-ip:nodeport-value/productpage 
     
  - You shall see a book-info website 
  
