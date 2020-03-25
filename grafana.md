@@ -6,5 +6,10 @@
 - Edit grafana service to make its type NodePort
 - Find out the randomly assigned NodePort of grafana service
 
+- Open in Borwser the following address 
+
+        http://public-ip:NodePort/
+        
+        
 
 
