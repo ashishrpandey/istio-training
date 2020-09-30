@@ -17,7 +17,7 @@
 
 ## Install istio with demo profile (Make sure your server has enough CPU/Mem resources , demo profile makes sure that it installs grafana, prometheus Kiali and other services)
      
-     istioctl install --set profile=demo
+     istioctl manifest apply --set profile=demo
 
      
 ## Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later:
